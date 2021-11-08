@@ -131,6 +131,13 @@ The server is now listening to [http://localhost:8080](http://localhost:8080).
 
 You may specify the port in `-p` Docker command line argument.
 
+To config CORS, use `--build-arg` argument. 
+
+* `ALLOWED_ORIGINS`
+  * The value of Access-Control-Allow-Origin, comma delimited
+  * Default value: `*`
+  * *Caution: You should set the value in production*
+
 
 ## How to generate the war
 

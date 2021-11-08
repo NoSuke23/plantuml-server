@@ -3,6 +3,10 @@ FROM maven:3-jdk-11-slim AS builder
 COPY pom.xml /app/
 COPY src/main /app/src/main/
 
+# set args to web.xml
+ARG ALLOWED_ORIGINS="\*"
+RUN sed -i "s/ALLOWED_ORIGINS/${ALLOWED_ORIGINS}/" /app/src/main/webapp/WEB-INF/web.xml
+
 WORKDIR /app
 RUN mvn --batch-mode --define java.net.useSystemProxies=true package
 
