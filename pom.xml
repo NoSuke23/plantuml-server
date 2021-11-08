@@ -76,6 +76,8 @@
     <junit.version>4.13.2</junit.version>
     <htmlunit.version>2.53.0</htmlunit.version>
     <jetty-server.version>${jetty.version}</jetty-server.version>
+    <!-- Cross Origin -->
+    <jetty-servlets.version>11.0.7</jetty-servlets.version>
 
     <!-- build plugin management -->
     <!-- lock down plugins versions to avoid using Maven defaults -->
@@ -176,6 +178,12 @@
       <artifactId>jetty-server</artifactId>
       <version>${jetty-server.version}</version>
       <scope>test</scope>
+    </dependency>
+    <!-- Cross Origin -->
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlets</artifactId>
+      <version>${jetty-servlets.version}</version>
     </dependency>
   </dependencies>
 
